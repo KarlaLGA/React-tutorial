@@ -19,12 +19,34 @@
                 name: 'Karla',
                 age: 25
             }
+
+            whenClick(e){
+                console.log(e.target)
+            }
+
+            whenHover(e){
+                console.log(e.target, e.pageX)
+            }
+
+            whenCopy(e){
+                console.log('copying is not allowed')
+            }
+
+            whenPaste(e){
+                console.log('evidence for your misconduct')
+            }
+
             render() {
                 return (
                     <div className="app-content">
                         <h1>Hello</h1>
                         <p>My name is { this.state.name }</p>
                         <p>and I am { this.state.age } years old</p>
+                        <button onClick={this.whenClick}>Click Me!</button>
+                        <button onMouseOver={this.whenHover}>Hover Me!</button>
+                        <p onCopy={this.whenCopy}>Smile to life while you have time</p>
+                        <input onPaste={this.whenPaste} type="text" name="free-text" id="free-text" placeholder="write here">
+                        </input>
                     </div>
                 )
             }
