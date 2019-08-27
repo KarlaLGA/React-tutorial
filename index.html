@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Montserrat&display=swap" rel="stylesheet">    <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
@@ -17,36 +18,61 @@
         class App extends React.Component {
             state = {
                 name: 'Karla',
-                age: 25
+                age: 25,
+                message: 'Hello'
             }
 
-            whenClick(e){
-                console.log(e.target)
+            whenClickName = (e) =>{
+                // console.log(e.target)
+                this.setState({
+                    name: 'Fabiola'
+                })
+                console.log(this.state)
             }
 
-            whenHover(e){
+            whenClickAge = (e) =>{
+                // console.log(e.target)
+                this.setState({
+                    age: 19
+                })
+                console.log(this.state)
+            }
+
+            whenHover = (e) =>{
                 console.log(e.target, e.pageX)
             }
 
-            whenCopy(e){
+            whenCopy= (e) =>{
                 console.log('copying is not allowed')
             }
 
-            whenPaste(e){
+            whenPaste = (e) =>{
                 console.log('evidence for your misconduct')
+            }
+
+            whenChange = (e) => {
+                this.setState({
+                    message: e.target.value
+                })
             }
 
             render() {
                 return (
                     <div className="app-content">
-                        <h1>Hello</h1>
-                        <p>My name is { this.state.name }</p>
-                        <p>and I am { this.state.age } years old</p>
-                        <button onClick={this.whenClick}>Click Me!</button>
-                        <button onMouseOver={this.whenHover}>Hover Me!</button>
+                        <h1>{ this.state.message }</h1>
+                        <p className="myinfo my1">My name is <span className="dynamic">{ this.state.name }</span></p>
+                        <p className="myinfo my2">and I am <span className="dynamic">{ this.state.age }</span> years old</p>
+
+                        <button onClick={this.whenClickName}>Change my name!</button>
+                        <button onClick={this.whenClickAge}>Change my age!</button>
+                        <button onMouseOver={this.whenHover} className="hoverbutton">Hover Me!</button>
+                        <p className="hyde">I am from Mexico</p>
+
                         <p onCopy={this.whenCopy}>Smile to life while you have time</p>
-                        <input onPaste={this.whenPaste} type="text" name="free-text" id="free-text" placeholder="write here">
-                        </input>
+                        <form>
+                            <input onPaste={this.whenPaste} onChange={this.whenChange} type="text" name="free-text" id="free-text" placeholder="say hello!" />
+                            <button  className="submitbutton">Submit</button>
+                        </form>
                     </div>
                 )
             }

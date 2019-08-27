@@ -1,0 +1,66 @@
+body{
+    background-color: salmon;
+}
+
+#app{
+    background-color: #FED4BC;
+    height: 100%;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    text-align: center;
+}
+
+h1{
+    font-family: 'Indie Flower', cursive;
+    font-size: 4rem;
+    margin: 0;
+    color: white;
+    text-shadow: -1px 1px 0 #000,
+                1px 1px 0 #000,
+                1px -1px 0 #000,
+                -1px -1px 0 #000;
+
+}
+
+.hoverbutton:hover ~ .hyde {
+    display: block;
+}
+
+p,button,input{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.myinfo{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+    width: 30%;
+    margin: auto;
+}
+
+.hyde{
+    display: none;
+}
+
+.dynamic{
+    font-family: 'Indie Flower';
+    display: block;
+    font-size: 2.5rem;
+}
+
+button{
+    display: inline-block;
+    text-align: center;
+    margin: 1rem 1%;
+    width: 200px;
+    padding: 0.25rem;
+    background-color: #EFD780;
+    border: 1px solid salmon;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submitbutton{
+    background-color: lightblue;
+    width: 150px;
+}
