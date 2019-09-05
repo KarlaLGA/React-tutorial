@@ -17,7 +17,15 @@ class App extends Component {
   addMusician = (musician) => {
     //create an arrow function that receives a parameter
     console.log(musician);
-    musician.id = this.state.musicians.length + 1;
+
+    let lastidNumber = this.state.musicians.length - 1;
+    console.log('last position')
+    console.log(lastidNumber);
+    let lastid = this.state.musicians[lastidNumber].id;
+    console.log('last id')
+    console.log(lastid);
+    console.log(lastid);
+    musician.id = lastid + 1;
     //create an id for the new object
     let moreMusicians =[...this.state.musicians, musician]
     //since we can't alter the state, whe need to create a new version of it
@@ -27,6 +35,16 @@ class App extends Component {
       //now we make the value of the state array the same as the new array
     })
   }
+
+  deleteMusician = (id) => {
+    console.log(id);
+    let lessMusicians = this.state.musicians.filter(musician => {
+      return musician.id !== id;
+    });
+    this.setState ({
+      musicians: lessMusicians
+    })
+  }
   render() {
     return (
       <div className="App">
@@ -34,7 +52,7 @@ class App extends Component {
         <h2>A list of my favourite </h2>
         <div className="favourite1">
           <h3>Musicians:</h3>
-          <Musicians musicians= { this.state.musicians } className="App-content"/>
+          <Musicians deleteMusician={this.deleteMusician} musicians= { this.state.musicians } className="App-content"/>
           <div className="form">
             <p>Add a musician:</p>
             <AddMusician addMusician= { this.addMusician } />

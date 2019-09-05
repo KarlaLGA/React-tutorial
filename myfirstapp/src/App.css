@@ -22,6 +22,15 @@ h1, h2, h3 {
     padding: 1rem;
 }
 
+.musician-btn {
+    border: none;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+    background-color: lightgreen;
+    margin-top: 0.75rem;
+}
+
 .form {
     text-align: center;
     margin: auto;
