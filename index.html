@@ -56,6 +56,11 @@
                 })
             }
 
+            whenSubmit = (e) => {
+                e.preventDefault();
+                console.log('form submitted!', this.state.message);
+            }
+
             render() {
                 return (
                     <div className="app-content">
@@ -69,7 +74,7 @@
                         <p className="hyde">I am from Mexico</p>
 
                         <p onCopy={this.whenCopy}>Smile to life while you have time</p>
-                        <form>
+                        <form onSubmit={this.whenSubmit}>
                             <input onPaste={this.whenPaste} onChange={this.whenChange} type="text" name="free-text" id="free-text" placeholder="say hello!" />
                             <button  className="submitbutton">Submit</button>
                         </form>
