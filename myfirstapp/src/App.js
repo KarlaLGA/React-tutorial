@@ -24,9 +24,9 @@ class App extends Component {
     let lastid = this.state.musicians[lastidNumber].id;
     console.log('last id')
     console.log(lastid);
-    console.log(lastid);
     musician.id = lastid + 1;
     //create an id for the new object
+
     let moreMusicians =[...this.state.musicians, musician]
     //since we can't alter the state, whe need to create a new version of it
     //we do this by creating a new array based on the state array and the parameter
@@ -45,6 +45,19 @@ class App extends Component {
       musicians: lessMusicians
     })
   }
+
+  componentDidMount(){
+    console.log('component mounted');
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log('component updated');
+    console.log(prevProps, prevState);
+  }
+  //prevProps shows us the previous props the component had before being updated
+  //prevState shows us the previous state of the component
+  //this method is a great way to compare what we had before with what we have now
+
   render() {
     return (
       <div className="App">
