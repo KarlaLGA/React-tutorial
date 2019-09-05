@@ -1,5 +1,6 @@
 import React, { Component} from 'react';
 import Musicians from './Musicians'
+import './App.css'
 
 class App extends Component {
   state = {
@@ -13,9 +14,11 @@ class App extends Component {
     return (
       <div className="App">
         <h1>My first React APP!</h1>
-        <h2>Hello and welcome</h2>
-        <Musicians musicians={this.state.musicians}/>
-  
+        <h2>A list of my favourite </h2>
+        <div className="favourite1">
+          <h3>Musicians:</h3>
+          <Musicians musicians={this.state.musicians} className="App-content"/>
+        </div>
       </div>
     );
   }

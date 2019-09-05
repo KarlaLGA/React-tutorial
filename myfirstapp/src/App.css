@@ -1,0 +1,23 @@
+.App{
+    background-color: salmon;
+    padding: 3rem;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+.musician-list{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.favourite1{
+    background-color: lightblue;
+    padding: 1rem;
+}
+
+.musician {
+    background-color: white;
+    padding: 1rem;
+}
