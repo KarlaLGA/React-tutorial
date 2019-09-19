@@ -5,11 +5,10 @@ const Navbar = (props) => {
     // setTimeout(() => {
     //     props.history.push('/about')
     // }, 2000 );
-    console.log(props);
     return (
         <nav className="nav-wrapper red darker-3">
             <div className="container">
-                <a  className="brand-logo yellow-text">Poke Times</a>
+                <Link to="/" className="brand-logo yellow-text">Poke Times</Link>
                 <ul className="right">
                     <li><NavLink to="/">Home</NavLink></li>
                     <li><NavLink to="/about">About</NavLink></li>
