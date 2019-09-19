@@ -1,7 +1,11 @@
 import React from "react";
 import { Link, NavLink } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = (props) => {
+    // setTimeout(() => {
+    //     props.history.push('/about')
+    // }, 2000 );
+    console.log(props);
     return (
         <nav className="nav-wrapper red darker-3">
             <div className="container">
