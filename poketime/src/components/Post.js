@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import axios from 'axios';
 import { connect } from 'react-redux';
+import { deletePost } from '../actions/postActions';
 
 class Post extends Component{
     whenClick = () => {
@@ -57,7 +58,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatchMethod) => {
     return {
         deletePost: (post_id) => {
-            dispatchMethod({ type: 'DELETE_POST', id: post_id})
+            dispatchMethod(deletePost(post_id))
         }
     }
 }
